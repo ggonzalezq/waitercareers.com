@@ -1,13 +1,24 @@
 <?php
 /*
- * @author  ggonzalez
- * @date    15 April 2013
+ * @author ggonzalez
+ * @date 27 August 2014
  */
 
 if ( ! defined('BASEPATH')) exit( 'No direct script access allowed' );
 
 class StatesHelper
 {
+    public static function getStates()
+    {
+        $arStates = array();
+        $oCI = new stdClass();
+        
+        $oCI = & get_instance();
+        $arStates = $oCI->oState->getStates();
+        $arStates = StatesHelper::prepareStates( $arStates );
+        
+        return $arStates;
+    }
     public static function prepareState( $arState = NULL )
     {
         if( ( $arState === NULL ) ||

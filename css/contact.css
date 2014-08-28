@@ -1,0 +1,41 @@
+#contact {
+    padding:15px;
+}
+#contact p {
+    font:14px/14px helvetica, sans-serif;
+}
+.form-item {
+    margin:0 0 10px 0;
+}
+.form-item label, 
+.form-label {
+    display:block;
+    font:14px/14px helvetica, sans-serif;
+    margin:0 0 5px 0;
+}
+.form-required {
+    color:#b94a48;
+}
+.form-text, 
+.form-textarea {
+    border: 1px solid #CCCCCC;
+    font:14px/18px helvetica,sans-serif;
+    padding:4px;
+    width:658px;
+}
+.form-textarea {
+    height:190px;
+    resize:none;
+}
+.form-error {
+    background:#ffcfcf;;
+    border:1px solid #e5a3a3;
+    color:#801b1b;
+    font:12px/24px helvetica,sans-serif;
+    margin:5px 0 0;
+    padding:0 10px;
+}
+.form-submit {
+    padding:3px;
+    width:100px;
+}

@@ -10,14 +10,6 @@ class Jobs extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper( 'html' );
-        $this->load->helper( 'jobs' );
-        $this->load->helper( 'pagination' );
-        $this->load->helper( 'states' );
-        $this->load->helper( 'url' );
-        $this->load->library( 'pagination' );
-        $this->load->model( 'state_model', 'oState' );
-        $this->load->model( 'job_model', 'oJob' );
     }
     public function index( $iPageNumber = NULL )
     {
@@ -25,7 +17,6 @@ class Jobs extends MY_Controller
         $arJobsParams = array();
         $arPaginationParams = array();
         $arState = array();
-        $arStates = array();
         $iLimit = 0;
         $iPageNumber = ( int ) $iPageNumber;
         $iTotalJobs = 0;
@@ -42,10 +33,7 @@ class Jobs extends MY_Controller
             $iPageNumber = 1;
         }
         
-        $arStates = $this->oState->getStates();
-        $arStates = StatesHelper::prepareStates( $arStates );
         $iLimit = JobsHelper::getJobsPerPage();
-        
         $sHeader = 'Waiter careers';
         
         $arJobsParams = JobsHelper::getJobsParams();
@@ -80,7 +68,7 @@ class Jobs extends MY_Controller
         
         return $this->load->view( 'jobs', array(
             'arJobs' => $arJobs,
-            'arStates' => $arStates,
+            'arStates' => StatesHelper::getStates(),
             'iLimit' => $iLimit,
             'iPageNumber' => $iPageNumber,
             'iTotalJobs' => $iTotalJobs,
@@ -96,7 +84,6 @@ class Jobs extends MY_Controller
         $arJobsParams = array();
         $arPaginationParams = array();
         $arState = array();
-        $arStates = array();
         $iLimit = 0;
         $iPageNumber = ( int ) $iPageNumber;
         $iTotalJobs = 0;
@@ -115,9 +102,6 @@ class Jobs extends MY_Controller
         $sHeader = $arState['state_name'] . ' waiter careers';
         $this->sTitle = $sHeader;
         
-        $arStates = $this->oState->getStates();
-        $arStates = StatesHelper::prepareStates( $arStates );
-        
         $arState = StatesHelper::prepareState( $arState );
         $sStateName = $arState['state_name'];
         
@@ -129,7 +113,6 @@ class Jobs extends MY_Controller
         {
             $iPageNumber = 1;
         }
-        
         
         $iLimit = JobsHelper::getJobsPerPage();
         
@@ -167,7 +150,7 @@ class Jobs extends MY_Controller
         return $this->load->view( 'jobs', array(
             'arJobs' => $arJobs,
             'arState' => $arState,
-            'arStates' => $arStates,
+            'arStates' => StatesHelper::getStates(),
             'iLimit' => $iLimit,
             'iPageNumber' => $iPageNumber,
             'iTotalJobs' => $iTotalJobs,

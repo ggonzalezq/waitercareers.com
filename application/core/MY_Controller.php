@@ -25,7 +25,6 @@ abstract class MY_Controller extends CI_Controller
             $this->output->enable_profiler( TRUE );
         }
         
-        
         $this->arCSS = array();
         $this->arJS = array();
         $this->arLinks = array();
@@ -36,6 +35,17 @@ abstract class MY_Controller extends CI_Controller
         $this->arCSS[] = '/css/main';
         $this->sTitle = 'Waiter careers';
         $this->sVersion = '1409212208';
+        
+        $this->config->load( 'global' );
+        $this->load->helper( 'html' );
+        $this->load->helper( 'jobs' );
+        $this->load->helper( 'pagination' );
+        $this->load->helper( 'states' );
+        $this->load->helper( 'url' );
+        $this->load->library( 'pagination' );
+        $this->load->model( 'state_model', 'oState' );
+        $this->load->model( 'job_model', 'oJob' );
+        
     }
 }
 

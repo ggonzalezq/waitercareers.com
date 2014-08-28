@@ -44,6 +44,7 @@ $route['404_override'] = '';
 $route['(:num)'] = "jobs/index/$1";
 $route['(:any)-waiter-careers'] = "jobs/jobs_state//$1";
 $route['(:any)-waiter-careers/(:num)'] = "jobs/jobs_state/$2/$1";
+$route['contact'] = "pages/contact";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
