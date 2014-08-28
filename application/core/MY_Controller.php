@@ -35,7 +35,7 @@ abstract class MY_Controller extends CI_Controller
         $this->arCSS[] = '/css/normalize';
         $this->arCSS[] = '/css/main';
         $this->sTitle = 'Waiter careers';
-        $this->sVersion = time();
+        $this->sVersion = '1409212208';
     }
 }
 
