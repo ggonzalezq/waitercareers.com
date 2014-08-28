@@ -12,6 +12,7 @@
         <?php foreach( $this->arLinks as $k => $v ): ?>
         <link rel="<?php echo $v['rel']; ?>" href="<?php echo $v['href']; ?>" />
         <?php endforeach; ?>
+        <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,7 +24,6 @@
 
         </script>
         <script src="http://gdc.indeed.com/ads/apiresults.js"></script>
-        <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
     <body>
         <div id="wrapper">            

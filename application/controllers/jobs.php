@@ -70,8 +70,8 @@ class Jobs extends MY_Controller
         
         PaginationHelper::setPaginationLinks( array(
             'current_page' => $iPageNumber,
-            'base_url' => '/{{page_number}}',
-            'first_url' => '/',
+            'base_url' => base_url() . '{{page_number}}',
+            'first_url' => rtrim( base_url(), '/' ), 
             'total_pages' => $iTotalPages
         ) );
         
@@ -156,8 +156,8 @@ class Jobs extends MY_Controller
         
         PaginationHelper::setPaginationLinks( array(
             'current_page' => $iPageNumber,
-            'base_url' => $arState['state_url'] . '/{{page_number}}',
-            'first_url' => $arState['state_url'],
+            'base_url' => rtrim( base_url(), '/' ) . $arState['state_url'] . '/{{page_number}}',
+            'first_url' => rtrim( base_url(), '/' ) . $arState['state_url'],
             'total_pages' => $iTotalPages
         ) );
         
@@ -166,6 +166,7 @@ class Jobs extends MY_Controller
         
         return $this->load->view( 'jobs', array(
             'arJobs' => $arJobs,
+            'arState' => $arState,
             'arStates' => $arStates,
             'iLimit' => $iLimit,
             'iPageNumber' => $iPageNumber,

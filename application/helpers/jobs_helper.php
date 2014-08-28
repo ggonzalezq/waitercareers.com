@@ -21,7 +21,7 @@ class JobsHelper
             'publisher' => 9144799812836165,
             'v' => 2,
             'format' => 'xml',
-            'q' => 'waiter waitress server hostess',
+            'q' => '(waiter or waitress or hostess)',
             'l' => '',
             'sort' => 'date',
             'radius' => 0,

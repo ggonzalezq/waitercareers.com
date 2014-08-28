@@ -32,6 +32,11 @@ class PaginationHelper
             return FALSE;
         }
         
+        
+        //  Canonical tag
+        
+        $oCI->arLinks[] = array( 'rel' => 'canonical', 'href' => $sFirstURL );
+        
         //  Generates the previous link
         
         if( $iCurrentPage > 1 )
