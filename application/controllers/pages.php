@@ -49,7 +49,7 @@ class Pages extends MY_Controller
             {   
                 $this->load->library( 'email' );
                 $this->email->from( $this->input->post( 'email' ) );
-                $this->email->to( 'gabrielgonzalezq@highdefdigest.com' );
+                $this->email->to( 'gabrielgonzalezq@gmail.com' );
                 $this->email->subject( 'Contact form - ' . $this->input->post( 'subject' ) );
                 $this->email->message(
                     'Name: ' . $this->input->post( 'name' ) . "\n" . 
