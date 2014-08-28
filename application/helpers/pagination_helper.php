@@ -90,7 +90,8 @@ class PaginationHelper
         
         if( ( $iPageNumber === NULL ) ||
             ( $iLimit === NULL ) ||
-            ( $iTotal === NULL ) )
+            ( $iTotal === NULL ) ||
+            ( $iTotal === 0 ) )
         {
             return FALSE;
         }
