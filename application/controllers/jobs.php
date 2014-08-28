@@ -56,7 +56,8 @@ class Jobs extends MY_Controller
         $iTotalJobs = ( int ) $arJobs->totalresults;
         $iTotalPages = PaginationHelper::getTotalPages( $iTotalJobs, $iLimit );
         
-        if( $iPageNumber >  $iTotalPages )
+        if( ( $iPageNumber !== 1 ) &&
+            ( $iPageNumber > $iTotalPages ) )
         {
             redirect( '/', 'location', 301 );
         }
@@ -120,7 +121,6 @@ class Jobs extends MY_Controller
         $arState = StatesHelper::prepareState( $arState );
         $sStateName = $arState['state_name'];
         
-        
         if( $iPageNumber === 1 )
         {
             redirect( $arState['state_url'], 'location', 301 );
@@ -134,6 +134,7 @@ class Jobs extends MY_Controller
         $iLimit = JobsHelper::getJobsPerPage();
         
         $arJobsParams = JobsHelper::getJobsParams();
+        $arJobsParams['l'] = $arState['state_name'];
         $arJobsParams['start'] = ( $iLimit )  * ( $iPageNumber - 1 );
         $arJobsParams['limit'] = $iLimit;
         $arJobs = $this->oJob->getJobs( $arJobsParams );
@@ -141,11 +142,11 @@ class Jobs extends MY_Controller
         $iTotalJobs = ( int ) $arJobs->totalresults;
         $iTotalPages = PaginationHelper::getTotalPages( $iTotalJobs, $iLimit );
         
-        if( $iPageNumber >  $iTotalPages )
+        if( ( $iPageNumber !== 1 ) &&
+            ( $iPageNumber > $iTotalPages ) )
         {
             redirect( $arState['state_url'], 'location', 301 );
         }
-        
         
         $arPaginationParams = PaginationHelper::getJobsPaginationParams();
         $arPaginationParams['total_rows'] = $iTotalJobs;
