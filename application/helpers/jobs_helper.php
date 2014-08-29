@@ -37,6 +37,12 @@ class JobsHelper
             'useragent' => $oCI->input->user_agent()
         );
     }
+    public static function getJobTypes()
+    {
+        return array( 
+            'fulltime', 'parttime', 'contract', 'temporary'
+        );
+    }
 }
 
 /* End of file jobs_helper.php */

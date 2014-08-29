@@ -22,6 +22,7 @@ class Jobs extends MY_Controller
         $iTotalJobs = 0;
         $iTotalPages = 0;
         $sHeader = '';
+        $sJobType = '';
         $sPagination = '';
         
         if( $iPageNumber === 1 )
@@ -33,12 +34,14 @@ class Jobs extends MY_Controller
             $iPageNumber = 1;
         }
         
+        $sJobType = $this->input->get( 'jt' );
         $iLimit = JobsHelper::getJobsPerPage();
         $sHeader = 'Waiter careers';
         
         $arJobsParams = JobsHelper::getJobsParams();
         $arJobsParams['start'] = ( $iLimit )  * ( $iPageNumber - 1 );
         $arJobsParams['limit'] = $iLimit;
+        $arJobsParams['jt'] = $sJobType;
         $arJobs = $this->oJob->getJobs( $arJobsParams );
         
         $iTotalJobs = ( int ) $arJobs->totalresults;
@@ -55,6 +58,10 @@ class Jobs extends MY_Controller
         $arPaginationParams['first_url'] = '/';
         $arPaginationParams['base_url'] = '';
         $arPaginationParams['uri_segment'] = 1;
+        if( $sJobType )
+        {
+            $arPaginationParams['suffix'] = '?jt=' . $sJobType;
+        }
         
         PaginationHelper::setPaginationLinks( array(
             'current_page' => $iPageNumber,
@@ -68,10 +75,13 @@ class Jobs extends MY_Controller
         
         return $this->load->view( 'jobs', array(
             'arJobs' => $arJobs,
+            'arJobsTypes' => JobsHelper::getJobTypes(),
             'arStates' => StatesHelper::getStates(),
             'iLimit' => $iLimit,
             'iPageNumber' => $iPageNumber,
             'iTotalJobs' => $iTotalJobs,
+            'sCurrentPath' => '/',
+            'sJobType' => $sJobType,
             'sPagination' => $sPagination,
             'sPaginationSummary' => PaginationHelper::getPaginationSummary( $iPageNumber, $iLimit, $iTotalJobs ),
             'sHeader' => $sHeader
@@ -89,9 +99,11 @@ class Jobs extends MY_Controller
         $iTotalJobs = 0;
         $iTotalPages = 0;
         $sHeader = '';
+        $sJobType = '';
         $sPagination = '';
         $sStateName = '';
         
+        $sJobType = $this->input->get( 'jt' );
         $arState = $this->oState->getStateByStateSlug( $sStateSlug );
         
         if( ! sizeof( $arState ) )
@@ -120,6 +132,8 @@ class Jobs extends MY_Controller
         $arJobsParams['l'] = $arState['state_name'];
         $arJobsParams['start'] = ( $iLimit )  * ( $iPageNumber - 1 );
         $arJobsParams['limit'] = $iLimit;
+        $arJobsParams['jt'] = $sJobType;
+        
         $arJobs = $this->oJob->getJobs( $arJobsParams );
         
         $iTotalJobs = ( int ) $arJobs->totalresults;
@@ -137,6 +151,11 @@ class Jobs extends MY_Controller
         $arPaginationParams['base_url'] = $arState['state_url'];
         $arPaginationParams['uri_segment'] = 2;
         
+        if( $sJobType )
+        {
+            $arPaginationParams['suffix'] = '?jt=' . $sJobType;
+        }
+        
         PaginationHelper::setPaginationLinks( array(
             'current_page' => $iPageNumber,
             'base_url' => rtrim( base_url(), '/' ) . $arState['state_url'] . '/{{page_number}}',
@@ -149,11 +168,14 @@ class Jobs extends MY_Controller
         
         return $this->load->view( 'jobs', array(
             'arJobs' => $arJobs,
+            'arJobsTypes' => JobsHelper::getJobTypes(),
             'arState' => $arState,
             'arStates' => StatesHelper::getStates(),
             'iLimit' => $iLimit,
             'iPageNumber' => $iPageNumber,
             'iTotalJobs' => $iTotalJobs,
+            'sCurrentPath' => '/' . uri_string(),
+            'sJobType' => $sJobType,
             'sPagination' => $sPagination,
             'sPaginationSummary' => PaginationHelper::getPaginationSummary( $iPageNumber, $iLimit, $iTotalJobs ),
             'sHeader' => $sHeader

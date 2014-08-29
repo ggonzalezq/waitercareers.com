@@ -1,12 +1,11 @@
 <?php require_once APPPATH . 'views/templates/header.php'; ?>
 <div id="job-types-nav">
     <ul class="clearfix">
-        <li class="active"><a href="">All types</a></li>
-        <li><a href="">Full time</a></li>
-        <li><a href="">Part time</a></li>
-        <li><a href="">Contract</a></li>
-        <li><a href="">Internship</a></li>
-        <li><a href="">Temporary</a></li>
+        <li<?php if( ! in_array( $sJobType, $arJobsTypes ) ): ?> class="active"<?php endif; ?>><a href="<?php echo $sCurrentPath; ?>">All types</a></li>
+        <li<?php if( $sJobType === 'fulltime' ): ?> class="active"<?php endif; ?>><a href="<?php echo $sCurrentPath; ?>?jt=fulltime">Full time</a></li>
+        <li<?php if( $sJobType === 'parttime' ): ?> class="active"<?php endif; ?>><a href="<?php echo $sCurrentPath; ?>?jt=parttime">Part time</a></li>
+        <li<?php if( $sJobType === 'contract' ): ?> class="active"<?php endif; ?>><a href="<?php echo $sCurrentPath; ?>?jt=contract">Contract</a></li>
+        <li<?php if( $sJobType === 'temporary' ): ?> class="active"<?php endif; ?>><a href="<?php echo $sCurrentPath; ?>?jt=temporary">Temporary</a></li>
     </ul>
 </div><!--#job-types-nav-->
 <?php if( $sHeader !== '' ): ?>
@@ -14,6 +13,8 @@
     <h1><?php echo $sHeader; ?></h1>
 </header><!--#/primary-content-header-->
 <?php endif; ?>
+
+<?php if( sizeof( $arJobs->results->result ) ): ?>
 <div id="jobs-buffer">
     <?php foreach( $arJobs->results->result as $oJob  ): ?>
     <article id="<?php echo $oJob->jobkey; ?>" class="job">
@@ -29,8 +30,16 @@
             <p class="job-description"><?php echo $oJob->snippet; ?></p>
         </a>
     </article>
-    <?php endforeach; ?>    
+    <?php endforeach; ?>
 </div><!--#jobs-buffer-->
+
 <?php echo $sPagination . "\n"; ?>
 <?php echo $sPaginationSummary . "\n"; ?>
+
+<?php elseif( in_array( $sJobType, $arJobsTypes ) ): ?>
+<div id="zero-jobs">
+    <p>Currently we don't have any open career with the filters selected</p>
+</div><!--#/zero-jobs-->
+<?php endif; ?>
+
 <?php require_once APPPATH . 'views/templates/footer.php'; ?>

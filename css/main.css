@@ -249,6 +249,10 @@ body {
     font:14px/21px helvetica, sans-serif;
     margin:0;
 }
+#zero-jobs p {
+    padding:15px;
+    font:14px/14px helvetica, sans-serif;
+}
 .pagination {
     background:#fff;
     border-top:1px solid #ccc;
