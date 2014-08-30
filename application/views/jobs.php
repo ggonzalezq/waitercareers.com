@@ -16,6 +16,14 @@
 
 <?php if( sizeof( $arJobs->results->result ) ): ?>
 <div id="jobs-buffer">
+    
+    
+    <div id="leaderboard">    
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2243402807454337" data-ad-slot="1902400001"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    
     <?php foreach( $arJobs->results->result as $oJob  ): ?>
     <article id="<?php echo $oJob->jobkey; ?>" class="job">
         <a href="<?php echo $oJob->url; ?>" rel="nofollow" target="_blank">

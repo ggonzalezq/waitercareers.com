@@ -105,7 +105,7 @@ body {
 #wrapper {
     margin:0 auto;
     padding:20px 0;
-    width:960px;
+    width:980px;
 }
 #main-header {
     height:90px;
@@ -128,14 +128,6 @@ body {
     text-indent:-9999px;
     text-transform:uppercase;
     width:394px;
-}
-#leaderboard {
-    position:absolute;
-    right:0;
-    top:0;
-}
-#leaderboard img {
-    display:block;
 }
 #main-nav {
     background:#e33100 url(/images/overlay-one.png) repeat-x;
@@ -170,7 +162,7 @@ body {
     border:1px solid #aaa;
     border-radius:5px;
     overflow:hidden;
-    width:698px;
+    width:726px;
 }
 #primary-content-header {
     background:#fff;
@@ -210,12 +202,11 @@ body {
 }
 
 
-.ad {
-    background:#fff;
+#leaderboard {
+    left:-2px;
 }
-.ad img {
-    display:block;
-}
+
+
 .job {
     background:#fff;
     border-bottom:1px solid #ccc;
@@ -230,7 +221,7 @@ body {
 }
 .job-title {
     color:#004176;
-    font:21px/25px helvetica, sans-serif;
+    font:21px/25px arial, sans-serif;
     margin:0 0 5px 0;
 }
 .job-metadata {
@@ -241,12 +232,12 @@ body {
 .job-metadata li {
     color:#444;
     float:left;
-    font:13px/15px helvetica, sans-serif;
+    font:13px/15px arial, sans-serif;
     margin:0 5px 0 0;
 }
 .job-description {
     color:#444;
-    font:14px/21px helvetica, sans-serif;
+    font:14px/21px arial, sans-serif;
     margin:0;
 }
 #zero-jobs p {
@@ -296,7 +287,7 @@ body {
     font:14px/14px helvetica, sans-serif;
 }
 #secondary-content {
-    width:240px;
+    width:242px;
 }
 #secondary-content aside {
     margin:0 0 20px 0;
