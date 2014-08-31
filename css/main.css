@@ -189,7 +189,7 @@ body {
     border:1px solid #aaa;
     border-radius:5px;
     overflow:hidden;
-    width:726px;
+    width:658px;
 }
 #primary-content-header {
     background:#fff;
@@ -319,12 +319,12 @@ body {
     font:14px/14px helvetica, sans-serif;
 }
 #secondary-content {
-    width:242px;
+    width:300px;
 }
 #secondary-content aside {
     margin:0 0 20px 0;
 }
-#jobs-by-state h3 {
+#secondary-content aside h3 {
     color:#666;
     font:15px/15px helvetica, sans-serif;
     margin:0 0 10px 0;
