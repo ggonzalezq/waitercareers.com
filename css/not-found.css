@@ -1,0 +1,10 @@
+#not-found {
+    padding:15px;
+}
+#not-found p {
+    font:14px/14px helvetica, sans-serif;
+}
+#not-found a {
+    color:#004176;
+    text-decoration:none;
+}

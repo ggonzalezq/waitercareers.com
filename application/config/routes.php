@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "jobs";
-$route['404_override'] = '';
+$route['404_override'] = 'client_error/not_found';
 
 $route['(:num)'] = "jobs/index/$1";
 $route['(:any)-waiter-careers'] = "jobs/jobs_state//$1";
