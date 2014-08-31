@@ -203,7 +203,9 @@ body {
 
 
 #leaderboard {
-    left:-2px;
+    left:-1px;
+    position:relative;
+    top:-1px;
 }
 
 
@@ -216,8 +218,11 @@ body {
 }
 .job a {
     display:block;
-    padding:15px;
+    padding:15px 9px;
     text-decoration:none;
+}
+.job a:hover .job-title {
+    text-decoration:underline;
 }
 .job-title {
     color:#004176;
@@ -237,7 +242,7 @@ body {
 }
 .job-description {
     color:#444;
-    font:14px/21px arial, sans-serif;
+    font:17px/20px arial, sans-serif;
     margin:0;
 }
 #zero-jobs p {

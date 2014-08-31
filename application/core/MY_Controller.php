@@ -12,6 +12,7 @@ abstract class MY_Controller extends CI_Controller
     public $arCSS;
     public $arJS;
     public $arLinks;
+    public $arMetas;
     public $sTitle;
     public $sVersion; 
     
@@ -28,6 +29,8 @@ abstract class MY_Controller extends CI_Controller
         $this->arCSS = array();
         $this->arJS = array();
         $this->arLinks = array();
+        $this->arMetas = array();
+        
         $this->sTitle = '';
         $this->sVersion = '';
         

@@ -6,6 +6,9 @@
     <head>
         <meta charset="utf-8" />
         <title><?php echo $this->sTitle; ?></title>
+        <?php foreach( $this->arMetas as $k => $v ): ?>
+        <meta name="<?php echo $v['name']; ?>" content="<?php echo $v['content']; ?>" />
+        <?php endforeach; ?>
         <?php foreach( $this->arCSS as $k => $v ): ?>
         <link rel="stylesheet" href="<?php echo $v; ?>.css?v=<?php echo $this->sVersion; ?>" />
         <?php endforeach; ?>

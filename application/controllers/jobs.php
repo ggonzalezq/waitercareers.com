@@ -25,6 +25,11 @@ class Jobs extends MY_Controller
         $sJobType = '';
         $sPagination = '';
         
+        $this->arMetas[] = array(
+            'name' => 'description',
+            'content' => 'Find the best waiter careers in United States'
+        );
+        
         if( $iPageNumber === 1 )
         {
             redirect( '/', 'location', 301 );
@@ -116,6 +121,11 @@ class Jobs extends MY_Controller
         
         $arState = StatesHelper::prepareState( $arState );
         $sStateName = $arState['state_name'];
+        
+        $this->arMetas[] = array(
+            'name' => 'description',
+            'content' => 'Find the best waiter careers in ' . $arState['state_name'] . ', United States'
+        );
         
         if( $iPageNumber === 1 )
         {
