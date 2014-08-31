@@ -36,10 +36,13 @@ abstract class MY_Controller extends CI_Controller
         
         $this->arCSS[] = '/css/normalize';
         $this->arCSS[] = '/css/main';
+        $this->arCSS[] = '/css/vendor/chosen';
+        
         $this->sTitle = 'Waiter careers';
         $this->sVersion = '1409212208';
         
         $this->config->load( 'global' );
+        $this->load->helper( 'form' );
         $this->load->helper( 'html' );
         $this->load->helper( 'jobs' );
         $this->load->helper( 'pagination' );

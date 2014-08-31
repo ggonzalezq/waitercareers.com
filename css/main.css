@@ -329,18 +329,18 @@ body {
     font:15px/15px helvetica, sans-serif;
     margin:0 0 10px 0;
 }
-#jobs-by-state ul {
+#jobs-by-state > ul {
     list-style:none;
     margin:0;
     padding:0;
 }
-#jobs-by-state li {
+#jobs-by-state > ul > li {
     border:1px solid #ccc;
     border-radius:3px;
     font:13px/22px helvetica, sans-serif;
     margin:0 0 3px 0;
 }
-#jobs-by-state a {
+#jobs-by-state > ul > li > a {
     border:1px solid #fff;
     border-radius:3px;
     color:#004176;
@@ -348,10 +348,34 @@ body {
     padding:0 10px;
     text-decoration:none;
 }
-#jobs-by-state a:hover {
+#jobs-by-state > ul > li > a:hover {
     background:#fff;
     color:#002D53;
 }
+
+
+
+
+
+
+
+
+
+
+
+#about h3 {
+    color:#666;
+    font:15px/15px helvetica, sans-serif;
+    margin:0 0 10px 0;
+}
+#about p {
+    color:#666;
+    font:13px/22px helvetica, sans-serif;
+}
+
+
+
+
 
 #main-footer {
     padding:20px 0 0 0;
@@ -360,6 +384,9 @@ body {
     color:#444;
     font:13px/13px helvetica, sans-serif;
     margin:0;
+}
+.none {
+    display:none;
 }
 .pull-left {
     float:left;

@@ -15,7 +15,6 @@ class Pages extends MY_Controller
     {
         require_once APPPATH . 'third_party/recaptcha-php-1.11/recaptchalib.php';
         $this->config->load( 'contact' );
-        $this->load->helper( 'form' );
         $this->load->library( 'form_validation' );
         
         $arValidations = array();

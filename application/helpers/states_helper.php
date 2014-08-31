@@ -19,6 +19,22 @@ class StatesHelper
         
         return $arStates;
     }
+    public static function getStatesDropdown()
+    {
+        $arStates = array();
+        $arStatesDropdown = array();
+        
+        $arStates = StatesHelper::getStates();
+        
+        $arStatesDropdown['/'] = 'All states';
+        
+        foreach( $arStates as $k => $v )
+        {
+            $arStatesDropdown[$arStates[$k]['state_url']] = $arStates[$k]['state_name'];
+        }
+        
+        return $arStatesDropdown;
+    }
     public static function prepareState( $arState = NULL )
     {
         if( ( $arState === NULL ) ||

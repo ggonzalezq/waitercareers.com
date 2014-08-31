@@ -14,16 +14,12 @@
 </header><!--#/primary-content-header-->
 <?php endif; ?>
 
-<?php if( sizeof( $arJobs->results->result ) ): ?>
-<div id="jobs-buffer">
-    
-    
+<div id="jobs-buffer">    
     <div id="leaderboard">    
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2243402807454337" data-ad-slot="1902400001"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    
+    </div><!--#/leaderboard-->
     <?php foreach( $arJobs->results->result as $oJob  ): ?>
     <article id="<?php echo $oJob->jobkey; ?>" class="job">
         <a href="<?php echo $oJob->url; ?>" rel="nofollow" target="_blank">
@@ -43,11 +39,5 @@
 
 <?php echo $sPagination . "\n"; ?>
 <?php echo $sPaginationSummary . "\n"; ?>
-
-<?php elseif( in_array( $sJobType, $arJobsTypes ) ): ?>
-<div id="zero-jobs">
-    <p>Currently we don't have any open career with the filters selected</p>
-</div><!--#/zero-jobs-->
-<?php endif; ?>
 
 <?php require_once APPPATH . 'views/templates/footer.php'; ?>
