@@ -129,6 +129,33 @@ body {
     text-transform:uppercase;
     width:394px;
 }
+#social-nav {
+    bottom:-50px;
+    position:absolute;
+    right:11px;
+}
+#social-nav ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#social-nav li {
+    float:left;
+    margin:0 0 0 10px;
+}
+#social-nav a {
+    display:block;
+    height:24px;
+    outline:0;
+    text-indent:-9999px;
+    width:24px;
+}
+#social-nav .facebook {
+    background:url(/images/facebook.png) no-repeat;
+}
+#social-nav .twitter {
+    background:url(/images/twitter.png) no-repeat;
+}
 #main-nav {
     background:#e33100 url(/images/overlay-one.png) repeat-x;
     border:1px solid #c12a01;

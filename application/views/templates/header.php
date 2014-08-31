@@ -36,6 +36,12 @@
                         <a href="/">Waiter careers</a>
                     </div>
                 </div><!--#/branding-->
+                <div id="social-nav">
+                    <ul class="clearfix">
+                        <li><a href="https://www.facebook.com/waitercareers" target="_blank" class="facebook">Facebook</a></li>
+                        <li><a href="https://twitter.com/waitercareers" target="_blank" class="twitter">Twitter</a></li>
+                    </ul>
+                </div><!--#social-nav-->
             </header><!--#main-header-->
             <nav id="main-nav">
                 <ul class="clearfix">
