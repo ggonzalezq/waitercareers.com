@@ -40,6 +40,7 @@
                     <ul class="clearfix">
                         <li><a href="https://www.facebook.com/waitercareers" target="_blank" class="facebook">Facebook</a></li>
                         <li><a href="https://twitter.com/waitercareers" target="_blank" class="twitter">Twitter</a></li>
+                        <li><a href="https://www.google.com/+Waitercareers" target="_blank" class="google-plus">Google plus</a></li>
                     </ul>
                 </div><!--#social-nav-->
             </header><!--#main-header-->

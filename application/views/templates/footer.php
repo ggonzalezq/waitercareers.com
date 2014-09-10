@@ -10,7 +10,7 @@
                         <?php echo form_dropdown( 'states', $arStatesDropdown, isset( $arState ) ? $arState['state_url'] : '', 'class="none" id="states"' ) . "\n"; ?>
                     </aside><!--#/jobs-by-state-->
                     <aside id="popular-careers">
-                        <h3>Popular waiter careers<?php if( sizeof( $arState ) ): ?> in <?php echo $arState['state_name']; ?><?php endif; ?></h3>
+                        <h3>Popular waiter careers<?php if( isset( $arState ) ): ?> in <?php echo $arState['state_name']; ?><?php endif; ?></h3>
                         <div id="large-skyscraper">                        
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2243402807454337" data-ad-slot="8520683204"></ins>

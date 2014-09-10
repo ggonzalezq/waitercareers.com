@@ -10,7 +10,7 @@ class JobsHelper
 {
     public static function getJobsPerPage()
     {
-        return 10;
+        return 20;
     }
     public static function getJobsParams()
     {
@@ -37,6 +37,39 @@ class JobsHelper
             'useragent' => $oCI->input->user_agent()
         );
     }
+    public static function getJobsPrepared( $oJobs = NULL )
+    {
+        if( $oJobs === NULL )
+        {
+            return FALSE;
+        }
+        
+        foreach( $oJobs->results->result as $oJob )
+        {
+            $oJob->url = JobsHelper::getJobURLPrepared( $oJob->url );
+            $oJob->datetime = JobsHelper::getJobURLDateTime( $oJob->date );   
+        }
+        
+        return $oJobs;
+    }
+    public static function getJobURLPrepared( $sURL = NULL )
+    {
+        if( $sURL === NULL )
+        {
+            return FALSE;
+        }
+        
+        return str_replace( '&', '&amp;', $sURL );
+    }    
+    public static function getJobURLDateTime( $sDate = NULL )
+    {
+        if( $sDate === NULL )
+        {
+            return FALSE;
+        }
+        
+        return date( 'Y-m-d H:m:s', strtotime( $sDate ) );
+    }    
     public static function getJobTypes()
     {
         return array( 

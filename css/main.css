@@ -150,11 +150,17 @@ body {
     text-indent:-9999px;
     width:24px;
 }
+#social-nav a:hover {
+    transform:rotate(45deg);
+}
 #social-nav .facebook {
     background:url(/images/facebook.png) no-repeat;
 }
 #social-nav .twitter {
     background:url(/images/twitter.png) no-repeat;
+}
+#social-nav .google-plus {
+    background:url(/images/google-plus.png) no-repeat;
 }
 #main-nav {
     background:#e33100 url(/images/overlay-one.png) repeat-x;

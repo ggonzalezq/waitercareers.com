@@ -30,7 +30,7 @@
                 <li class="job-company"><?php echo $oJob->company; ?></li>
                 <li class="job-city"><b><?php echo $oJob->city; ?> <?php echo $oJob->state; ?></b></li>
                 <li class="job-time">
-                    <time datetime="<?php echo date( 'Y-m-d H:m:s', strtotime( $oJob->date ) ); ?>"><?php echo $oJob->formattedRelativeTime; ?></time>
+                    <time datetime="<?php echo $oJob->datetime; ?>"><?php echo $oJob->formattedRelativeTime; ?></time>
                 </li>
             </ul>
             <p class="job-description"><?php echo $oJob->snippet; ?></p>

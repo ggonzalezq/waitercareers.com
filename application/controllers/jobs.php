@@ -47,7 +47,10 @@ class Jobs extends MY_Controller
         $arJobsParams['start'] = ( $iLimit )  * ( $iPageNumber - 1 );
         $arJobsParams['limit'] = $iLimit;
         $arJobsParams['jt'] = $sJobType;
+        
         $arJobs = $this->oJob->getJobs( $arJobsParams );
+        $arJobs = JobsHelper::getJobsPrepared( $arJobs );
+        
         
         $iTotalJobs = ( int ) $arJobs->totalresults;
         $iTotalPages = PaginationHelper::getTotalPages( $iTotalJobs, $iLimit );
@@ -146,6 +149,7 @@ class Jobs extends MY_Controller
         $arJobsParams['jt'] = $sJobType;
         
         $arJobs = $this->oJob->getJobs( $arJobsParams );
+        $arJobs = JobsHelper::getJobsPrepared( $arJobs );
         
         $iTotalJobs = ( int ) $arJobs->totalresults;
         $iTotalPages = PaginationHelper::getTotalPages( $iTotalJobs, $iLimit );
